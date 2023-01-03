@@ -29,11 +29,13 @@ export function Menu() {
                     <p>
                         <b><a href="nosotros.html">Nosotros</a></b>
                     </p>
-                    <div className="item-catalogo">
+                    <div id='item-catalogo' className={css`padding: 2% 2% 0 2%;
+    margin-right: 3%;`}>
                         <p><b>Catalogo</b></p>
-                        <ul className={css`background-color: white;
+                        <ul  className={css`background-color: white;
                             list-style-type: none;
                             position: absolute;
+                            margin-top: 0.4%;
                             width: 12%;
                             margin-left: -1.5%;
                             opacity: 0;
