@@ -1,8 +1,33 @@
 import { css } from '@emotion/css'
+import {Container} from './Style'
+//import mujer1 from '../../imagenes/mujer1'
 
 export function Catalogo() {
     return(
     <div className={css`padding-top: 10%; height:300px` }>
+    <Container>
+    <div className="catalogo col-md-10" id="catalogo">
+        <div id="product1" className="card col-sm-5 col-md-3 producto">
+          <img src="" className="card-img-top" alt="..." />
+          <div className="card-body">
+            <p className="card-text">Blusa Mujer Manga Corta Nudo</p>
+            <h5 className="card-title"><b>S/.25.00</b></h5>
+            <button className="btn btn-light" id="button1"
+              onclick="obtenerId('product1','vendido1','button1')">Comprar</button>
+          </div>
+        </div>
+
+        <div id="product2" className="card col-sm-5 col-md-3 producto">
+          <img src="img/mujer2.webp" className="card-img-top" alt="..." />
+          <div className="card-body">
+            <p className="card-text">Blusa Mujer Sin Manga Patty</p>
+            <h5 className="card-title"><b>S/.25.00</b></h5>
+            <button className="btn btn-light" id="button2"
+              onclick="obtenerId('product2','vendido2','button2')">Comprar</button>
+          </div>
+        </div>
+      </div>    
+      </Container>
     {/* <div className="content row">
       <div class="filtro col-md-2">
         <p><b>Categoria</b></p>
