@@ -7,7 +7,7 @@ export function Menu() {
             <input type="checkbox" className={css`display: none;`} id="btn-menu" />
             <label className={css`display: none;
                 font-size: 30px;
-                padding: 10px;`} for="btn-menu"><i className="fa-solid fa-bars"></i></label>
+                padding: 10px;`} htmlFor="btn-menu"><i className="fa-solid fa-bars"></i></label>
             <Title><Link href="index.html">MiTienda</Link></Title>
             <MenuItem>
                 <MenuItemP>

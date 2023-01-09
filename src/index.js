@@ -7,13 +7,17 @@ import {Menu} from './Components/Menu/Menu';
 import {Footer} from './Components/Footer';
 import {Catalogo} from './Components/Catalogo/Catalogo';
 import reportWebVitals from './reportWebVitals';
+import Context from './Context/Context';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Menu />
-    <Catalogo/>
-    <Footer />
+    <Context>
+      <Menu />
+      <Catalogo/>
+      <Footer />
+    </Context>
   </React.StrictMode>
 );
 
