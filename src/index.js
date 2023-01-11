@@ -2,18 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 //import App from './App';
-//import './menu.css';
 import {Menu} from './Components/Menu/Menu';
 import {Footer} from './Components/Footer';
 import {Catalogo} from './Components/Catalogo/Catalogo';
 import reportWebVitals from './reportWebVitals';
-import Context from './Context/Context';
+import Context from './Components/Context';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Context>
+    
+     <Context>
       <Menu />
       <Catalogo/>
       <Footer />

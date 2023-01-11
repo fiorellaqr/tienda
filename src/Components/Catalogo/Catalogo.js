@@ -2,7 +2,7 @@ import { css } from '@emotion/css'
 import {Container} from './Style'
 //import { useReducer } from 'react';
 import './catalogo.css';
-import { CarritoState } from '../../Context/Context';
+import { CarritoState } from '../Context';
 import Producto from '../Producto';
 import Modal from '../Modal';
 //import mujer1 from '';

@@ -1,37 +1,43 @@
 import { css } from '@emotion/css'
-import {MenuItemP, CatalogoList, CatalogoListItem, ItemCatalogo, Link, MenuItem, Title, Container} from './Styles'
+import {MenuItemP, CatalogoList, CatalogoListItem, ItemCatalogo, Enlace, MenuItem, Title, Container} from './Styles'
+import { CarritoState } from "../Context";
 
 export function Menu() {
+const {carritoState: {carrito} } = CarritoState();
+
     return (
         <Container>
             <input type="checkbox" className={css`display: none;`} id="btn-menu" />
             <label className={css`display: none;
                 font-size: 30px;
                 padding: 10px;`} htmlFor="btn-menu"><i className="fa-solid fa-bars"></i></label>
-            <Title><Link href="index.html">MiTienda</Link></Title>
+            <Title><Enlace href="index.html">MiTienda</Enlace></Title>
             <MenuItem>
                 <MenuItemP>
-                    <b><Link href="index.html">Inicio</Link></b>
+                    <b><Enlace href="index.html">Inicio</Enlace></b>
                 </MenuItemP>
                 <MenuItemP>
-                    <b><Link href="nosotros.html">Nosotros</Link></b>
+                    <b><Enlace href="nosotros.html">Nosotros</Enlace></b>
                 </MenuItemP>
                 <ItemCatalogo>
                     <p><b>Catalogo</b></p>
                     <CatalogoList>
-                        <CatalogoListItem><Link href="hombres.html">Varones</Link></CatalogoListItem>
-                        <CatalogoListItem><Link href="mujeres.html">Damas</Link></CatalogoListItem>
-                        <CatalogoListItem><Link href="Niños.html">Infantes</Link></CatalogoListItem>
+                        <CatalogoListItem><Enlace href="hombres.html">Varones</Enlace></CatalogoListItem>
+                        <CatalogoListItem><Enlace href="mujeres.html">Damas</Enlace></CatalogoListItem>
+                        <CatalogoListItem><Enlace href="Niños.html">Infantes</Enlace></CatalogoListItem>
                     </CatalogoList>
                 </ItemCatalogo>
                 <MenuItemP>
-                    <Link href="#contactanos"><b>Contactanos</b></Link>
+                    <Enlace href="#contactanos"><b>Contactanos</b></Enlace>
                 </MenuItemP>
                 <MenuItemP>
-                    <b><Link href="Login.html">Login</Link></b>
+                    <b><Enlace href="Login.html">Login</Enlace></b>
                 </MenuItemP>
                 <MenuItemP>
-                    <b><Link href="carrito.html"><i className="fa-solid fa-cart-shopping"></i></Link></b>
+                {/* <Link to="/ListarCarrito"></Link> */}
+                    <b><i className="fa-solid fa-cart-shopping"></i>
+                    <span className="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger">
+                    {carrito.length}</span></b>
                 </MenuItemP>
             </MenuItem>
         </Container>

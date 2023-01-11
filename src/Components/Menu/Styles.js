@@ -28,6 +28,7 @@ export const MenuItemP = styled.p`
 padding: 2%;
 margin-right: 3%;
 margin-bottom: 0;
+position:relative;
 
 &:hover{
     background-color: #E7E7E7;
@@ -74,7 +75,7 @@ export const CatalogoListItem = styled.li`
     border-bottom: 1px solid rgba(211, 211, 211, 0.493);
 
 `
-export const Link = styled.a`
+export const Enlace = styled.a`
     background-color: none;
     text-decoration: none;
     color: black;

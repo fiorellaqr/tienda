@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const [query, setQuery] = useState("react js");
+  const [libros, setLibros] = useState([]);
+
+  useEffect(() => {
+    function fetchLibros() {
+      fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
+        .then((response) => response.json())
+        .then((data) => setLibros(data.items));
+    }
+    fetchLibros();
+  }, [query]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Escribe el libro que estas buscando</h1>
+      <input value={query} onChange={(e) => setQuery(e.target.value)} />
+      <ul>
+        {libros?.map((libro) => (
+          <li key={libro.id}> {libro.volumeInfo.title} </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
 export default App;
+
