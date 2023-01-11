@@ -16,3 +16,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/**CARRITO**/
+.imgCarrito{
+  width: 100%;
+}
+
+.carro-item{
+  display: flex;
+  justify-content: space-between;
+}
+.cantidad {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+.fa-trash{
+  color: brown;
+  float: right;
+}

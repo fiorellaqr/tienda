@@ -4,7 +4,7 @@ import {Container} from './Style'
 import './catalogo.css';
 import { CarritoState } from '../Context';
 import Producto from '../Producto';
-import Modal from '../Modal';
+//import Modal from '../Modal';
 //import mujer1 from '';
 
 export function Catalogo() {
@@ -22,10 +22,6 @@ export function Catalogo() {
           })
         }
       </div>
-
-      {
-        <Modal ></Modal>
-      }  
       </Container>
   </div>
   

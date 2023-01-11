@@ -1,31 +1,26 @@
-import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Carrito from './Components/Carrito'
+import { Catalogo } from './Components/Catalogo/Catalogo'
+import Context from './Components/Context'
+import { Footer } from './Components/Footer'
+import { Menu } from './Components/Menu/Menu'
 
 function App() {
-  const [query, setQuery] = useState("react js");
+
+    const [query, setQuery] = useState("react js");
   const [libros, setLibros] = useState([]);
-
-  useEffect(() => {
-    function fetchLibros() {
-      fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
-        .then((response) => response.json())
-        .then((data) => setLibros(data.items));
-    }
-    fetchLibros();
-  }, [query]);
-
-  return (
-    <div>
-      <h1>Escribe el libro que estas buscando</h1>
-      <input value={query} onChange={(e) => setQuery(e.target.value)} />
-      <ul>
-        {libros?.map((libro) => (
-          <li key={libro.id}> {libro.volumeInfo.title} </li>
-        ))}
-      </ul>
-    </div>
-  );
+    useEffect(() => {
+        function fetchLibros() {
+          fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
+            .then((response) => response.json())
+            .then((data) => setLibros(data.items));
+        }
+        fetchLibros();
+      }, [query]);
+    return (
+        <></>
+    )
 }
 
-export default App;
-
+export default App
