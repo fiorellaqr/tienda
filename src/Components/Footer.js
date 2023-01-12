@@ -1,19 +1,10 @@
 import { css } from '@emotion/css'
-import { useEffect, useState } from 'react'
+import {useIp} from './useIp'
 
 export function Footer() {
 
-    const [apip, setip] = useState([])
-    useEffect(() => {
-        function fetchIP() {
-            fetch(`https://api.ipify.org?format=json
-            `)
-              .then((response) => response.json())
-              .then((dataip) => setip(dataip.ip));
-          }
-          fetchIP();
-    }, [])
-
+    /* CUSTOM HOOKS */
+    const apip  = useIp();
 
     return (
         <footer id="contactanos" className={css`background-color: #141414fc;

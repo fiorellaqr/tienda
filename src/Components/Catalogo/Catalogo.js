@@ -1,15 +1,12 @@
 import { css } from '@emotion/css'
 import {Container} from './Style'
-//import { useReducer } from 'react';
 import './catalogo.css';
 import { CarritoState } from '../Context';
 import Producto from '../Producto';
-//import Modal from '../Modal';
-//import mujer1 from '';
+
 
 export function Catalogo() {
   const {carritoState:{productos}} = CarritoState();
-  console.log(productos);
 
     return(
       <>
@@ -28,19 +25,3 @@ export function Catalogo() {
   </>
   )
 }
-
-/* function productosReducer(productos, action){
-  switch(action.type){
-    case 'añadir':{
-      return[
-        ...productos,{
-          id:action.id,
-          nombre:action.text,
-          codigo:action.text
-        }]
-    }
-    default: {
-      throw Error ('Unknown action: ' + action.type);
-    }
-  }
-} */

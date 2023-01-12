@@ -4,14 +4,12 @@ import React, { useEffect, useState } from 'react'
 import { CarritoState } from './Context'
 import '../index.css'
 import Vacio from './Vacio'
-import {IconButton, DeleteIcon} from "@mui/material"
-
 
 const Carrito = () => {
 
   const { carritoState: { carrito }, dispatch, } = CarritoState();
   const [total, setTotal] = useState();
-
+  
   useEffect(() => {
     setTotal(carrito.reduce((acumulador, actual) => acumulador + Number(actual.precio) * actual.cantidad, 0))
   }, [carrito])
