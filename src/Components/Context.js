@@ -1,9 +1,17 @@
-import {createContext, useReducer, useContext} from "react";
+import {createContext, useReducer, useContext, useEffect, useState} from "react";
 import { carritoReducer } from "./Reducers";
 
 const  Carrito = createContext();
 
 const Context =({children}) =>{
+
+    /* const [productoss, setProductoss] = useState([])
+    useEffect(()=>{
+        fetch(`http://localhost:9000/api/users`)
+        .then((datos) => Response.json())
+        .then ((productoss) = setProductoss (datos))
+    },[]) */
+
     const productos = [
         {id: 1, nombre: "Blusa Mujer Manga Corta Nudo", precio: 50, stock: 10, codigo: "P001", categoria: "mujer", img:"/imagenes/mujer1.webp"},
         {id: 2, nombre: "Blusa Mujer Sin Manga Patty", precio: 55, stock: 5, codigo: "P002", categoria: "mujer", img:"/imagenes/mujer2.webp"},

@@ -1,10 +1,16 @@
+import { useRef } from "react";
 import { CarritoState } from "./Context";
 
 function Producto({prod}) {
 
+  
   const { carritoState: {carrito}, dispatch } = CarritoState();
-
-  console.log(carrito)
+  let ref = useRef(0);
+  
+  function handleClick(){
+    ref.current = ref.current + 1;
+    console.log( " el producto se ha cliqueado" + ref.current + "veces")
+  }
 
   return (
     <div id={prod.id} className="card col-12 col-sm-5 col-md-3 col-xl-2 producto">
@@ -23,7 +29,7 @@ function Producto({prod}) {
               <button className="btn btn-outline-dark"
               onClick={()=>{
                 dispatch({type:'agregar',payload:prod})
-              }}>Añadir al Carrito</button>
+                }}>Añadir al Carrito</button>
             )}
 
             
