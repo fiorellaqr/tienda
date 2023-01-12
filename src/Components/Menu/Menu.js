@@ -3,6 +3,7 @@ import {MenuItemP, CatalogoList, CatalogoListItem, ItemCatalogo, Enlace, MenuIte
 import { CarritoState } from "../Context";
 import { Link } from 'react-router-dom';
 
+
 export function Menu() {
 const {carritoState: {carrito} } = CarritoState();
 
